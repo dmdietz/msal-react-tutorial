@@ -5,11 +5,11 @@ import { ProfileData } from './components/ProfileData';
 import { useMsal } from '@azure/msal-react';
 import Button from 'react-bootstrap/Button';
 
-export const ProfileContent = () => {
+export default function ProfileContent() {
   const { instance, accounts } = useMsal();
   const [graphData, setGraphData] = useState(null);
 
-  function RequestProfileData() {
+  function RequestProfileData(): void {
     // Silently acquires an access token which is then attached to a request for MS Graph data
     instance
       .acquireTokenSilent({
@@ -34,4 +34,4 @@ export const ProfileContent = () => {
       )}
     </>
   );
-};
+}

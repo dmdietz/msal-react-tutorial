@@ -9,7 +9,7 @@ interface IProfileDataProps {
   graphData: IGraphData;
 }
 
-export const ProfileData = (props: IProfileDataProps) => {
+export function ProfileData(props: IProfileDataProps) {
   return (
     <div id="profile-div">
       <p>
@@ -26,4 +26,4 @@ export const ProfileData = (props: IProfileDataProps) => {
       </p>
     </div>
   );
-};
+}

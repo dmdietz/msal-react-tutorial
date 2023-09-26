@@ -1,8 +1,8 @@
-import { PageLayout } from "./components/PageLayout";
-import { MainContent } from "./MainContent";
+import PageLayout from "./components/PageLayout";
+import MainContent from "./MainContent";
 import "./App.css";
 
-const App = () => {
+function App() {
   return (
     <PageLayout>
       <center>
@@ -10,6 +10,6 @@ const App = () => {
       </center>
     </PageLayout>
   );
-};
+}
 
 export default App;

@@ -1,8 +1,7 @@
-import React from 'react';
 import { AuthenticatedTemplate, UnauthenticatedTemplate } from '@azure/msal-react';
-import { ProfileContent } from './ProfileContent';
+import ProfileContent from './ProfileContent';
 
-export const MainContent = () => {
+export default function MainContent() {
   return (
     <div className="App">
       <AuthenticatedTemplate>
@@ -18,4 +17,4 @@ export const MainContent = () => {
       </UnauthenticatedTemplate>
     </div>
   );
-};
+}

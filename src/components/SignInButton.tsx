@@ -3,10 +3,10 @@ import { loginRequest } from "../authConfig";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 
-export const SignInButton = () => {
+export default function SignInButton() {
   const { instance } = useMsal();
 
-  const handleLogin = (loginType: string) => {
+  function handleLogin({ loginType }: { loginType: string; }): void {
     if (loginType === "popup") {
       instance.loginPopup(loginRequest).catch((e) => {
         console.log(e);
@@ -16,7 +16,7 @@ export const SignInButton = () => {
         console.log(e);
       });
     }
-  };
+  }
   return (
     <DropdownButton
       variant="secondary"
@@ -24,12 +24,12 @@ export const SignInButton = () => {
       drop="start"
       title="Sign In"
     >
-      <Dropdown.Item as="button" onClick={() => handleLogin("popup")}>
+      <Dropdown.Item as="button" onClick={() => handleLogin({ loginType: "popup" })}>
         Sign in using Popup
       </Dropdown.Item>
-      <Dropdown.Item as="button" onClick={() => handleLogin("redirect")}>
+      <Dropdown.Item as="button" onClick={() => handleLogin({ loginType: "redirect" })}>
         Sign in using Redirect
       </Dropdown.Item>
     </DropdownButton>
   );
-};
+}
